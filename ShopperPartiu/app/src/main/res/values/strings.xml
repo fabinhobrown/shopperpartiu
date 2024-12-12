@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ShopperPartiu</string>
+    <string name="google_map_api_key">AIzaSyCCHqYLXR4J53lW6a5BegXfeyaVeOVcnJU</string>
+    <string name="msg_error_if_null_drivers">Busca não retornou motoristas. Favor verificar as informações.</string>
+    <string name="msg_error_search_travel">Erro ao buscar viagens. Tente novamente mais tarde</string>
+    <string name="msg_success_register_travel">Sucesso ao registrar viagem!</string>
+    <string name="msg_edt_initial">Partiu para onde agora?</string>
+</resources>

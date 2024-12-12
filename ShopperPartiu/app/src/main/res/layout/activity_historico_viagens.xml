@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_historico"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".View.HistoricoViagens">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Histórico de viagens"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textAlignment="center" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txInputIdClienteHistorico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cliente">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtIdClienteHistorico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapCharacters" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecione o motorista" />
+
+    <Spinner
+        android:id="@+id/spnMotoristas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnListarHistoricoViagens"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listar" />
+
+    <TextView
+        android:id="@+id/tvQtdViagens"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total de viagens [0]"
+        android:textAlignment="center" />
+
+    <ProgressBar
+        android:id="@+id/pgCarregarHistorico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewHistoricoViagens"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical" />
+</LinearLayout>
