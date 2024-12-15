@@ -1,0 +1,119 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/btnMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:background="@drawable/borda_button"
+        android:text="Para onde vamos agora?"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/borda_button"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTimeTravel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tempo de viagem"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txInputIdCliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Cliente">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtIdCliente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapCharacters"
+                        android:text="CT01" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txInputOrigem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Origem">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtOrigem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Av. Pres. Kenedy, 2385 - Remédios, Osasco - SP, 02675-031" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txInputDestino"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Destino">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtDestino"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Av. Paulista, 1538 - Bela Vista, São Paulo - SP, 01310-200" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btnBuscar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Buscar" />
+
+                <ProgressBar
+                    android:id="@+id/pgCarregarCorridas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:visibility="gone" />
+
+                <!-- Lista das opções de viagem -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical" />
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
